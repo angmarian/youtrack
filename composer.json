@@ -1,9 +1,14 @@
 {
-    "name": "nepda/youtrack-client",
+    "name": "angmarian/youtrack-client",
     "description": "A PHP YouTrack client library",
     "minimum-stability": "dev",
     "license": "BSD-4-Clause",
     "authors": [
+        {
+           "name" : "Paul Drozd",
+           "email" : "paul.drozd@gmail.com",
+           "homepage" : "http://paul.drozd.in.ua/"
+        },
         {
             "name": "Nepomuk Fraedrich",
             "email": "info@nepda.eu"
