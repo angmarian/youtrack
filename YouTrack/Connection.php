@@ -1420,7 +1420,8 @@ class Connection
         if ($description) { $params['description'] = (string) $description; }
 
         $issue = $this->requestXml('POST', '/issue/' . $id, $params);
-        return new Issue($issue, $this);
+
+        return $this->getIssue($id);
     }
 
 }
