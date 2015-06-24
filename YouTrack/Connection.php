@@ -1382,4 +1382,45 @@ class Connection
 
         return null;
     }
+
+    /**
+     * Updates an issue with properties from $params
+     *
+     * All $param values will be casted to string!
+     *
+     * If a $param value is longer than 100 chars it will be transferred via POSTFIELDS (not query string)
+     *
+     * may be this is an general $params value:
+     * <code>
+     *  $params = array(
+     * 'project' => $project,
+     * 'assignee' => $assignee,
+     * 'summary' => $summary,
+     * 'description' => $description,
+     * 'priority' => $priority,
+     * 'type' => $type,
+     * 'subsystem' => $subsystem,
+     * 'state' => $state,
+     * 'affectsVersion' => $affectsVersion,
+     * 'fixedVersion' => $fixedVersion,
+     * 'fixedInBuild' => $fixedInBuild,
+     * );
+     * </code>
+     *
+     * @param string $id issue id
+     * @param string $summary issue summary
+     * @param string $description issue description
+     * @return Issue
+     */
+    public function updateIssue($id, $summary = null, $description = null)
+    {
+        $params = array();
+
+        if ($summary)     { $params['summary']     = (string) $summary; }
+        if ($description) { $params['description'] = (string) $description; }
+
+        $issue = $this->requestXml('POST', '/issue/' . $id, $params);
+        return new Issue($issue, $this);
+    }
+
 }
