@@ -970,7 +970,7 @@ class Connection
             );
             return $result;
         }
-        return [];
+        return array();
     }
 
     /**
