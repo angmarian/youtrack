@@ -131,4 +131,9 @@ class Issue extends Object
         }
         return $this->links;
     }
+
+    public function getAsArray()
+    {
+        return $this->attributes;
+    }
 }
