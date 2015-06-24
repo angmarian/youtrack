@@ -919,10 +919,10 @@ class Connection
      *
      * For input like this
      * <code>
-     * $queries = [
+     * $queries = array(
      *   '#Resolved',
      *   '#Fixed'
-     * ];
+     * );
      * </code>
      *
      * Returns something like
@@ -959,7 +959,7 @@ class Connection
         );
         if (isset($xml->count)) {
             $counts = (array)$xml->count;
-            $result = [];
+            $result = array();
             array_walk(
                 $counts,
                 function (&$v, $k) use (&$result, &$queries) {

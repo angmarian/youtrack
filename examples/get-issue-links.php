@@ -10,9 +10,9 @@ $youtrack = new YouTrack\Connection(
 
 // make sure, this exists!
 
-$issues = [
+$issues = array(
     'Sandbox-36'
-];
+);
 
 
 foreach ($issues as $issueId) {

@@ -9,10 +9,10 @@ $youtrack = new YouTrack\Connection(
 );
 
 
-$queries = [
+$queries = array(
     '#Resolved',
     '#Fixed'
-];
+);
 
 $result = $youtrack->executeCountQueries($queries);
 

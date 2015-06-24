@@ -10,7 +10,7 @@ $youtrack = new YouTrack\Connection(
 
 $user = 'root';
 
-$roles = [];
+$roles = array();
 try {
     $roles = $youtrack->getUserRoles($user);
 } catch (\YouTrack\NotAuthorizedException $e) {
@@ -27,7 +27,7 @@ if ($roles) {
         $refs = $role->getProjectRefs();
         $projectRefs = '';
         if (!empty($refs)) {
-            $projectRefs = [];
+            $projectRefs = array();
             foreach ($refs as $ref) {
                 $projectRefs[] = $ref->getId();
             }
